@@ -1,0 +1,43 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-4 col-xl-4 col-xxl-4">
+            <div class="tareas" *ngFor="let tarea of tareas">
+                <div *ngIf="tarea.estado === 'Cerrado' && tarea.eliminado === false" >
+                    <div class="card">
+                        <div class="card-body" class="cerrado">
+                            <h3 class="card-title">{{tarea.titulo}}<button (click)="deleteTask(tarea)">X</button></h3>
+                            <h5 class="card-text">{{tarea.descripcion}}</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-xl-4 col-xxl-4">
+            <div class="tareas" *ngFor="let tarea of tareas">
+                <div *ngIf="tarea.estado === 'En proceso' && tarea.eliminado === false" (click)="editarTask(tarea)">
+                    <div class="card">
+                        <div class="card-body" class="proceso">
+                            <h3 class="card-title">{{tarea.titulo}}<button (click)="deleteTask(tarea)">X</button></h3>
+                            <h5 class="card-text">{{tarea.descripcion}}</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-xl-4 col-xxl-4">
+            <div class="tareas" *ngFor="let tarea of tareas">
+                <div *ngIf="tarea.estado === 'Abierto' && tarea.eliminado === false" (click)="editarTask(tarea)"> 
+                    <div class="card">
+                        <div class="card-body" class="abierto">
+                            <h3 class="card-title">{{tarea.titulo}}<button (click)="deleteTask(tarea)">X</button></h3>
+                            <h5 class="card-text">{{tarea.descripcion}}</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<app-footer></app-footer>

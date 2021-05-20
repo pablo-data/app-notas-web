@@ -1,0 +1,42 @@
+//diseño form
+ul{
+    list-style-type: none;
+}
+
+ul li{
+   text-align:center;
+   margin-right: 30px;
+}
+
+
+form{
+    margin-top: 5%;
+}
+
+mat-form-field.mat-form-field {
+    font-size: 16px;
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.botones{
+    margin-top: 20px;
+    text-align: end;
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.botones button{
+    padding: 0px 50px;
+    cursor:pointer;
+}
+
+.error{
+    color: red;
+    font-size: 15px;
+    margin: 5px;
+}

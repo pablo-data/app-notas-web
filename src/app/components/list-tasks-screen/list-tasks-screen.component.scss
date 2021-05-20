@@ -1,0 +1,39 @@
+//diseño boostrap cards
+.card{
+margin: 10px 0px;
+min-width: 200px;
+}
+
+.container-fluid{
+    min-height: 70vh;
+}
+
+.card-title{
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+button{
+   font-size: 20px;
+   border: none;
+   background: none;
+}
+
+.abierto{
+    background: #8fd6e1;
+    cursor: pointer;
+}
+
+.cerrado{
+    background: #ff7171;
+}
+
+.proceso{
+    background: #fffbdf;
+    cursor: pointer;
+}
+
+.card-text{
+    max-width: 450px;
+}

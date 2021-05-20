@@ -1,0 +1,46 @@
+<form [formGroup]="formulario" (ngSubmit)="validar()" novalidate>
+    <ul>
+        <li>
+            <mat-form-field appearance="fill">
+                <mat-label>Título</mat-label>
+                <input type="text" formControlName="titulo" required matInput>
+
+                <mat-error *ngIf="formulario.get('titulo')?.errors?.required">
+                    El titulo es <strong>requerido</strong>
+                </mat-error>
+
+            </mat-form-field>
+        </li>
+        <li>
+            <mat-form-field appearance="fill">
+                <mat-label>Estado</mat-label>
+                <mat-select formControlName="estado" required>
+                  <mat-option value="{{estado.name}}" *ngFor="let estado of estados"> {{ estado.name }}</mat-option>
+                </mat-select>
+                <mat-error *ngIf="formulario.get('estado')?.errors?.required">
+                    El estado es <strong>requerido</strong>
+                </mat-error>
+            </mat-form-field>
+        </li>
+        <li>
+            <mat-form-field hintLabel="Max 150 caracteres" appearance="fill">
+                <mat-label>Descripcion</mat-label>
+                <textarea #input type="text" formControlName="descripcion" maxlength="150" required matInput></textarea>
+
+                <mat-hint align="end">{{input.value?.length || 0}}/150</mat-hint>
+
+                <mat-error *ngIf="formulario.get('descripcion')?.errors?.required">
+                    La descripcion es <strong>requerida</strong>
+                </mat-error>
+            </mat-form-field>
+        </li>
+        <li>
+            <div class="botones">
+                <button type="submit" id="enviar" [disabled]="!formulario.valid" mat-raised-button>Actualizar</button>
+            </div>
+        </li>
+
+    </ul>
+</form>
+
+
